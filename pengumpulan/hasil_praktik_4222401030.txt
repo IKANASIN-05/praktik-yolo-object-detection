@@ -1,0 +1,10 @@
+HASIL PRAKTIK - NIM 4222401030
+
+Dataset: botol dan box (100 gambar, anotasi bounding box manual)
+Pembagian: 80 train, 20 val. Model: YOLO26n, imgsz 320, batch 8, CPU.
+
+E1 (5 epoch): precision 0.838, recall 1.000, mAP50 0.973, mAP50-95 0.585, train box loss 1.178
+E3 (10 epoch): precision 0.973, recall 0.950, mAP50 0.987, mAP50-95 0.560, train box loss 1.013
+
+Analisis:
+E3 memiliki precision dan mAP50 yang lebih tinggi serta train box loss yang lebih rendah dibanding E1, sedangkan recall dan mAP50-95 sedikit lebih rendah. Pada hasil prediksi 20 gambar validasi, E1 menghasilkan lebih banyak deteksi berlebih, sedangkan E3 lebih bersih tetapi tidak mendeteksi objek pada 2 gambar. Karena data validasi hanya 20 gambar, selisih kedua eksperimen belum cukup kuat untuk menyimpulkan bahwa satu konfigurasi pasti lebih baik.

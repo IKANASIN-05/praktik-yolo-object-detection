@@ -1,0 +1,19 @@
+DATA PROYEK MAHASISWA
+
+Nama: Willy Luthfiandri
+NIM: 4222401030
+Program Studi: Teknik Rekayasa Robotika
+Mata Kuliah: RE503 Computer Vision and Deep Learning
+Judul Praktik: Implementasi dan Evaluasi Object Detection Menggunakan YOLO
+Sistem Operasi: Ubuntu 24
+Bahasa Pemrograman: Python
+Framework: Ultralytics YOLO
+Library Pemrosesan Citra: OpenCV
+Dataset: botol dan box, 100 gambar (50 botol, 50 box) dengan anotasi bounding box manual format YOLO; dibagi 80 train dan 20 val
+
+Tujuan:
+
+1. Memahami proses deteksi objek menggunakan YOLO.
+2. Memahami struktur dataset dan anotasi objek.
+3. Melaksanakan eksperimen model dan mengumpulkan hasil evaluasi.
+4. Menganalisis hasil eksperimen berdasarkan grafik dan data pengujian.

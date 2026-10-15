@@ -1,0 +1,30 @@
+# LAPORAN PRAKTIK OBJECT DETECTION YOLO
+
+## 1. Tujuan
+Memahami penerapan object detection menggunakan YOLO, mulai dari menyiapkan dataset beranotasi bounding box, melatih model, hingga menganalisis hasil evaluasi.
+
+## 2. Perangkat dan Perangkat Lunak
+- Sistem operasi: Ubuntu 24
+- Bahasa pemrograman: Python
+- Framework: Ultralytics YOLO (model YOLO26n)
+- Library pendukung: OpenCV dan Pandas
+- Perangkat pemrosesan: CPU
+
+## 3. Data dan Metode
+Dataset terdiri dari 100 gambar dengan 2 kelas, yaitu botol (50 gambar) dan box (50 gambar). Setiap gambar diberi satu bounding box secara manual dan disimpan dalam format YOLO. Dataset dibagi 80 gambar untuk training dan 20 gambar untuk validasi (40/10 per kelas).
+
+E1 dilatih selama 5 epoch dan E3 selama 10 epoch. Keduanya memakai bobot awal yolo26n.pt, ukuran gambar 320, batch size 8, dan CPU.
+
+## 4. Hasil Eksperimen
+| Eksperimen | Epoch | Precision | Recall | mAP50 | mAP50-95 | Train box loss |
+|---|---|---|---|---|---|---|
+| E1 | 5 | 0.838 | 1.000 | 0.973 | 0.585 | 1.178 |
+| E3 | 10 | 0.973 | 0.950 | 0.987 | 0.560 | 1.013 |
+
+Grafik: pengumpulan/E1/results.png dan pengumpulan/E3/results.png.
+
+## 5. Hasil Test
+Kedua model diuji pada 20 gambar validasi. Hasil deteksi ada di pengumpulan/prediksi/hasil_E1_data/ dan pengumpulan/prediksi/hasil_E3_data/. Model E1 menghasilkan beberapa deteksi berlebih (misalnya 3 box pada satu gambar). Model E3 lebih bersih, tetapi tidak mendeteksi objek pada 2 gambar (cardboard33 dan cardboard403).
+
+## 6. Kesimpulan
+Penambahan epoch dari 5 menjadi 10 meningkatkan precision dan mAP50 serta menurunkan train box loss, tetapi recall dan mAP50-95 sedikit menurun. Karena validasi hanya 20 gambar, perbedaan ini belum cukup untuk menyatakan E3 pasti lebih baik dari E1. Evaluasi dengan data validasi yang lebih banyak diperlukan.

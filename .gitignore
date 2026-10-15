@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.env
+datasets/
+hasil/
+runs/
+*.pt
+hasil/
+runs/
+*.pt
+dataset/
